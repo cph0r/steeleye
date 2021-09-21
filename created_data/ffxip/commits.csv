@@ -1,0 +1,4 @@
+,commit_hash,commit_url,commit_message,author_name,author_email,author_username,author_url,committer_name,committer_email,committer_username,committer_url
+0,b32c4ee7336d0ad4a15a5f33b94f70101d2abc1a,https://github.com/valyana/ffxip/commit/b32c4ee7336d0ad4a15a5f33b94f70101d2abc1a,"fix counters, mobs with numbers and periods, alliance members, blu misses, general missing info",U-THOMAS\Jason Merrill,jason@thomas.(none),,,U-THOMAS\Jason Merrill,jason@thomas.(none),,
+1,8d49afd4367a6450157bcdb957fbc99e27919957,https://github.com/valyana/ffxip/commit/8d49afd4367a6450157bcdb957fbc99e27919957,"remove ads and networking, fix for log format change",U-THOMAS\Jason Merrill,jason@thomas.(none),,,U-THOMAS\Jason Merrill,jason@thomas.(none),,
+2,7812daaa36079230eb6612e7599bdc65cf9bc0e0,https://github.com/valyana/ffxip/commit/7812daaa36079230eb6612e7599bdc65cf9bc0e0,importing 6.7.1,U-THOMAS\Jason Merrill,jason@thomas.(none),,,U-THOMAS\Jason Merrill,jason@thomas.(none),,

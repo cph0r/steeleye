@@ -1,0 +1,7 @@
+
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.github.com:443
+DEBUG:urllib3.connectionpool:https://api.github.com:443 "GET /repositories?since=10000&Authorization=auth_token+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 HTTP/1.1" 403 280
+ERROR:root:2021-09-21 20:23:41.990561:Api Limit Excedeed
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.github.com:443
+DEBUG:urllib3.connectionpool:https://api.github.com:443 "GET /repositories?since=10000&Authorization=auth_token+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 HTTP/1.1" 403 280
+ERROR:root:2021-09-21 20:24:47.807710:Api Limit Excedeed
