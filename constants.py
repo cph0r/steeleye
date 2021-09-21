@@ -1,9 +1,9 @@
 import os
-cwd= os.getcwd()
+cwd = os.getcwd()
 
 # ASSIGNMENT 1
 
-ANSWER1 = str(cwd) +'/A1_data/repos.csv'
+ANSWER1 = str(cwd) + '/A1_data/repos.csv'
 ANSWER2 = str(cwd)+'/A1_data/'
 
 # C
@@ -90,7 +90,7 @@ FOLDER_ALREADY_EXIST = 'folder already exist'
 # ASSIGNMENT 2
 PATH = str(cwd)
 DATA_PATH = str(cwd)+'/datasets-master/'
-CREATED_PATH = str(cwd)+'/generated_data/'
+CREATED_PATH = str(cwd)+'/A2_data/'
 APPLICATION_WITH_VERSION = 'application_with_version'
 APPLICATION = 'application'
 VERSION = 'application_version'
@@ -109,7 +109,7 @@ ID = 'id'
 COUNTRY = 'country'
 COUNTRY_CODE = 'country_code'
 TOTAL_HITS = 'Total Hits'
-FIRST_NAME ='first_name'
+FIRST_NAME = 'first_name'
 LAST_NAME = 'last_name'
 EMAIL = 'email'
 GENDER = 'gender'
