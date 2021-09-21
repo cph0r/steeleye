@@ -7,8 +7,7 @@ from datetime import datetime
 # CONSTANTS
 FROM_DATE = '2021-08-17'
 END_DATE = '2021-08-18'
-logging.basicConfig(filename=str(os.getcwd())+'/generated_data/assessment2.log', level=logging.DEBUG)
-
+logging.basicConfig(filename=str(os.getcwd())+'/logs/A2.log', level=logging.DEBUG)
 
 def create_df(from_date, to_date):
     """Create Df"""

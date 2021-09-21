@@ -3,16 +3,22 @@ import pandas as pd
 from constants import *
 import os
 import logging
-import datetime
-logging.basicConfig(filename=str(os.getcwd())+'/created_data/assessment1.log', level=logging.DEBUG)
+from datetime import datetime
+logging.basicConfig(filename=str(os.getcwd())+'/logs/A1.log', level=logging.DEBUG)
+
+REPO_COUNT = 2
+MAX_COMMITS = 4
 
 def make_api_call(repo_count, max_commit_count):
+    """Make Authenticated api call to github API"""
     r = requests.get(URL, HEADERS).json()
     try:
         df = pd.DataFrame.from_records(r)[0:repo_count]
         create_repos_csv(df, max_commit_count)
+        logging.info(str(datetime.now())+': Succesfully Created answer CSVs')
     except Exception as ex:
-        logging.error(str(datetime.datetime.now())+':'+API_LIMIT)
+        # Give Api limit Exceed Error
+        logging.error(str(datetime.now())+':'+API_LIMIT)
 
 
 def create_repos_csv(df, max_commit_count):
@@ -33,7 +39,7 @@ def create_commits_csv(df, max_commit_count):
         response = requests.get(url, HEADERS).json()
         repo_name = df[NAME][k]
         if response[MESSAGE] is not None:
-            logging.WARNING(str(datetime.datetime.now())+': '+repo_name+': Empty Repository')
+            logging.WARNING(str(datetime.now())+': '+repo_name+': Empty Repository')
         else:
             commit_df = pd.DataFrame.from_records(
                     response)[0:max_commit_count]
@@ -47,6 +53,7 @@ def create_commits_csv(df, max_commit_count):
             commit_df = commit_df[COMMIT_COLUMNS]
             create_directory(df, k, repo_name)
             commit_df.to_csv(ANSWER2+repo_name+COMMITS_CSV, encoding=UTF8)
+            logging.WARNING(str(datetime.now())+': Created Commits file for '+repo_name)
         k += 1
 
 
@@ -64,12 +71,13 @@ def create_util_df_map(commit_df):
     }
 
 
-def create_directory(df, k, repo_name):
+def create_directory(repo_name):
     """Create Directory"""
     try:
         os.mkdir(ANSWER2+repo_name)
+        logging.info(str(datetime.now())+': Created Directory for repo - > '+repo_name)
     except Exception as ex:
-        logging.info(str(datetime.datetime.now())+': '+df[NAME][k]+': '+str(ex))
+        logging.info(str(datetime.now())+': '+repo_name+': '+str(ex))
 
 
 def add_new_col(required_name, present_name, temp_df, final_df):
@@ -93,4 +101,4 @@ def get_temp_df(i,util_map):
 
 if __name__ == '__main__':
     """Main Function Change the variables"""
-    make_api_call(5, 4)
+    make_api_call(REPO_COUNT, MAX_COMMITS)
