@@ -5,12 +5,7 @@ cwd= os.getcwd()
 ANSWER1 = str(cwd) +'/created_data/repos.csv'
 ANSWER2 = str(cwd)+'/created_data/'
 
-# ASSIGNMENT 2
-PATH = str(cwd)
-DATA_PATH = str(cwd)+'/datasets-master/'
-
-
-# A1
+# C
 URL = 'https://api.github.com/repositories?since=10000'
 TOKEN_VALUE = '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'
 AUTHERIZATION = 'Authorization'
@@ -56,20 +51,12 @@ AUTHOR_NAME = 'author_name'
 AUTHOR_USERNAME = 'author_username'
 AUTHOR_EMAIL = 'author_email'
 AUTHOR_URL = 'author_url'
-
+UTF8 = 'utf-8'
 COMMITTER_NAME = 'committer_name'
 COMMITTER_USERNAME = 'committer_username'
 COMMITTER_EMAIL = 'committer_email'
 COMMITTER_URL = 'committer_url'
-
-# A2
-
-CSV = '.csv'
-USER_DATA = 'user_dataset'
-ACTIVITY = 'activity_'
-NO_OF_ACTIVITY_FILES = 5
-UTF8 = 'utf-8'
-
+# HEADER
 HEADERS = {AUTHERIZATION: AUTH_TOKEN+TOKEN_VALUE}
 
 # ARRAYS AND MAPS
