@@ -8,7 +8,7 @@ CREATED_PATH = str(cwd)+'/generated_data/'
 APPLICATION_WITH_VERSION = 'application_with_version'
 APPLICATION = 'application'
 VERSION = 'application_version'
-
+WEBSITE = 'website'
 
 # A2
 SRC_IP = "source_ip"

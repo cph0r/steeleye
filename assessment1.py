@@ -35,8 +35,6 @@ def create_commits_csv(df, max_commit_count):
         if response[MESSAGE] is not None:
             logging.WARNING(str(datetime.datetime.now())+': '+repo_name+': Empty Repository')
         else:
-            # print(repo_name)
-            # print(response)
             commit_df = pd.DataFrame.from_records(
                     response)[0:max_commit_count]
             util_map = create_util_df_map(commit_df)
@@ -47,7 +45,6 @@ def create_commits_csv(df, max_commit_count):
 
             commit_df = commit_df.rename(columns=COMMIT_RENAME_MAP)
             commit_df = commit_df[COMMIT_COLUMNS]
-            print('lol')
             create_directory(df, k, repo_name)
             commit_df.to_csv(ANSWER2+repo_name+COMMITS_CSV, encoding=UTF8)
         k += 1
