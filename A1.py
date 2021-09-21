@@ -7,8 +7,8 @@ from datetime import datetime
 logging.basicConfig(filename=str(os.getcwd()) +
                     '/logs/A1.log', level=logging.DEBUG)
 
-REPO_COUNT = 2
-MAX_COMMITS = 4
+REPO_COUNT = 6
+MAX_COMMITS = 8
 
 
 def make_api_call(repo_count, max_commit_count):
@@ -19,8 +19,7 @@ def make_api_call(repo_count, max_commit_count):
         create_repos_csv(df, max_commit_count)
         logging.info(str(datetime.now())+': Succesfully Created answer CSVs')
     except Exception as ex:
-        # Give Api limit Exceed Error
-        logging.error(str(datetime.now())+':'+API_LIMIT)
+        logging.error(str(datetime.now())+':'+str(ex)+API_LIMIT)
 
 
 def create_repos_csv(df, max_commit_count):
@@ -28,7 +27,6 @@ def create_repos_csv(df, max_commit_count):
     for key, value in DF_MAP.items():
         df = add_new_col(key, value, df[OWNER], df)
     df = df[REPO_COLUMNS]
-
     create_commits_csv(df, max_commit_count)
     df.to_csv(ANSWER1, encoding=UTF8)
 
@@ -40,24 +38,22 @@ def create_commits_csv(df, max_commit_count):
         url = url.replace('{/sha}', '')
         response = requests.get(url, HEADERS).json()
         repo_name = df[NAME][k]
-        if response[MESSAGE] is not None:
-            logging.WARNING(str(datetime.now())+': ' +
-                            repo_name+': Empty Repository')
-        else:
+        try:
+            msg = response[MESSAGE]
+            logging.error(str(datetime.now())+': ' +repo_name+': Empty Repository')
+        except Exception as ex:
             commit_df = pd.DataFrame.from_records(
                 response)[0:max_commit_count]
+            
             util_map = create_util_df_map(commit_df)
-
             for i, j in COMMIT_COL_MAP.items():
                 temp_df = get_temp_df(i, util_map)
                 commit_df = add_new_col(i, j, temp_df, commit_df)
 
-            commit_df = commit_df.rename(columns=COMMIT_RENAME_MAP)
-            commit_df = commit_df[COMMIT_COLUMNS]
-            create_directory(df, k, repo_name)
+            commit_df = commit_df.rename(columns=COMMIT_RENAME_MAP)[COMMIT_COLUMNS]
+            create_directory(repo_name)
             commit_df.to_csv(ANSWER2+repo_name+COMMITS_CSV, encoding=UTF8)
-            logging.WARNING(str(datetime.now()) +
-                            ': Created Commits file for '+repo_name)
+            logging.info(str(datetime.now()) +': Created Commits file for '+repo_name)
         k += 1
 
 

@@ -1,0 +1,26 @@
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.github.com:443
+DEBUG:urllib3.connectionpool:https://api.github.com:443 "GET /repositories?since=10000&Authorization=auth_token+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 HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.github.com:443
+DEBUG:urllib3.connectionpool:https://api.github.com:443 "GET /repos/cjmiyake/insoshi/commits?Authorization=auth_token+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 HTTP/1.1" 200 None
+INFO:root:2021-09-22 01:01:22.604505: Created Directory for repo - > insoshi
+INFO:root:2021-09-22 01:01:22.607255: Created Commits file for insoshi
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.github.com:443
+DEBUG:urllib3.connectionpool:https://api.github.com:443 "GET /repos/Timonn/tryrepos/commits?Authorization=auth_token+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 HTTP/1.1" 409 118
+ERROR:root:2021-09-22 01:01:22.959831: tryrepos: Empty Repository
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.github.com:443
+DEBUG:urllib3.connectionpool:https://api.github.com:443 "GET /repos/rayvinly/badger/commits?Authorization=auth_token+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 HTTP/1.1" 200 705
+INFO:root:2021-09-22 01:01:23.375130: Created Directory for repo - > badger
+INFO:root:2021-09-22 01:01:23.376176: Created Commits file for badger
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.github.com:443
+DEBUG:urllib3.connectionpool:https://api.github.com:443 "GET /repos/valyana/ffxip/commits?Authorization=auth_token+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 HTTP/1.1" 200 953
+INFO:root:2021-09-22 01:01:23.783322: Created Directory for repo - > ffxip
+INFO:root:2021-09-22 01:01:23.784600: Created Commits file for ffxip
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.github.com:443
+DEBUG:urllib3.connectionpool:https://api.github.com:443 "GET /repos/neves/escolar/commits?Authorization=auth_token+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 HTTP/1.1" 200 None
+INFO:root:2021-09-22 01:01:24.199868: Created Directory for repo - > escolar
+INFO:root:2021-09-22 01:01:24.201203: Created Commits file for escolar
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.github.com:443
+DEBUG:urllib3.connectionpool:https://api.github.com:443 "GET /repos/ggriffiniii/scripts/commits?Authorization=auth_token+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 HTTP/1.1" 200 858
+INFO:root:2021-09-22 01:01:24.599599: Created Directory for repo - > scripts
+INFO:root:2021-09-22 01:01:24.600541: Created Commits file for scripts
+INFO:root:2021-09-22 01:01:24.601621: Succesfully Created answer CSVs

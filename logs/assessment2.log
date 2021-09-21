@@ -1,9 +1,0 @@
-INFO:root:2021-09-22 00:02:10.445921: Created csv1
-INFO:root:2021-09-22 00:02:10.453989: Created csv2
-INFO:root:2021-09-22 00:02:10.460781: Created csv3
-ERROR:root:2021-09-22 00:02:36.469730: to date should be greater than from date
-ERROR:root:2021-09-22 00:02:58.458648: time data '2020sadas-08-18' does not match format '%Y-%m-%d'
-INFO:root:2021-09-22 00:04:01.745399: Created csv1
-INFO:root:2021-09-22 00:04:01.751976: Created csv2
-INFO:root:2021-09-22 00:04:01.756824: Created csv3
-INFO:root:2021-09-22 00:04:01.756998: Successfully Created all Answers
