@@ -63,7 +63,7 @@ def filter_date(activity_df, f_date, t_date):
 
 def generate_answer(df, column_array, n, name):
     """Generate Answer"""
-    df1 = df
+    df1 = df.copy()
     df1.dropna(subset=column_array, inplace=True)
     df1 = df.groupby(column_array).size().sort_values(
         ascending=False).reset_index(name=TOTAL_HITS)[0:n]
