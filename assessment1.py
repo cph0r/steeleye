@@ -4,7 +4,7 @@ from constants import *
 import os
 import logging
 import datetime
-logging.basicConfig(filename='assessment1.log', level=logging.DEBUG)
+logging.basicConfig(filename=str(os.getcwd())+'/created_data/assessment1.log', level=logging.DEBUG)
 
 def make_api_call(repo_count, max_commit_count):
     r = requests.get(URL, HEADERS).json()
