@@ -1,0 +1,58 @@
+# A1
+URL = 'https://api.github.com/repositories?since=10000'
+TOKEN_VALUE =  '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'
+AUTHERIZATION= 'Authorization'
+TOKEN = 'token '
+AUTH_TOKEN = 'auth_token '
+ANSWER1 = '/media/cph0r/Storage/steeyleye/created_data/repos.csv'
+ANSWER2 = '/media/cph0r/Storage/steeyleye/created_data/'
+COMMITS_CSV = '/commits.csv'
+
+# COLUMNS NAME
+DESCRIPTION = 'description'
+ID ='id'
+NAME ='name'
+FULL_NAME = 'full_name'
+NODE_ID = 'node_id'
+PRIVATE =  'private'
+FORK = 'fork'
+OWNER = 'owner'
+OWNER_USERNAME = 'owner_username'
+TYPE = 'type'
+HTML_URL = 'html_url'
+LOGIN = 'login'
+SITE_ADMIN  = 'site_admin'
+OWNER_ADMIN = 'owner_site_admin'
+OWNER_URL = 'owner_url'
+OWNER_TYPE = 'owner_type'
+
+COMMITS_URL = 'commits_url'
+MESSAGE = 'message'
+AUTHOR = 'author'
+COMMIT = 'commit'
+COMMITTER = 'committer'
+EMAIL = 'email'
+SHA = 'sha'
+
+COMMIT_HASH = 'commit_hash'
+COMMIT_MESSAGE = 'commit_message'
+COMMIT_URL = 'commit_url'
+
+AUTHOR_NAME = 'author_name'
+AUTHOR_USERNAME = 'author_username'
+AUTHOR_EMAIL = 'author_email'
+AUTHOR_URL = 'author_url'
+
+COMMITTER_NAME ='committer_name'
+COMMITTER_USERNAME = 'committer_username'
+COMMITTER_EMAIL ='committer_email'
+COMMITTER_URL = 'committer_url'
+
+# A2
+PATH = '/media/cph0r/Storage/steeyleye/'
+DATA_PATH = '/media/cph0r/Storage/steeyleye/datasets-master/'
+CSV = '.csv'
+USER_DATA = 'user_dataset'
+ACTIVITY = 'activity_'
+NO_OF_ACTIVITY_FILES = 5
+UTF8 = 'utf-8'
