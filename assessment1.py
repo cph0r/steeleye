@@ -18,7 +18,7 @@ def make_api_call(repo_count, max_commit_count):
 def create_repos_csv(df, max_commit_count):
     """Create Repos Csv"""
     for key, value in DF_MAP.items():
-        add_new_col(key, value, df[OWNER], df)
+        df = add_new_col(key, value, df[OWNER], df)
     df = df[REPO_COLUMNS]
     
     create_commits_csv(df, max_commit_count)
@@ -35,15 +35,15 @@ def create_commits_csv(df, max_commit_count):
         if response[MESSAGE] is not None:
             logging.WARNING(str(datetime.datetime.now())+': '+repo_name+': Empty Repository')
         else:
-            print(repo_name)
-            print(response)
+            # print(repo_name)
+            # print(response)
             commit_df = pd.DataFrame.from_records(
                     response)[0:max_commit_count]
             util_map = create_util_df_map(commit_df)
                 
             for i, j in COMMIT_COL_MAP.items():
                 temp_df = get_temp_df(i,util_map)
-                add_new_col(i, j, temp_df, commit_df)
+                commit_df = add_new_col(i, j, temp_df, commit_df)
 
             commit_df = commit_df.rename(columns=COMMIT_RENAME_MAP)
             commit_df = commit_df[COMMIT_COLUMNS]
@@ -79,6 +79,7 @@ def add_new_col(required_name, present_name, temp_df, final_df):
     """Add new Columns in the Dataframe"""
     final_df[required_name] = temp_df.apply(
         lambda x: x[present_name] if x is not None else '')
+    return final_df
 
 def get_temp_df(i,util_map):
     """Get temp df"""
